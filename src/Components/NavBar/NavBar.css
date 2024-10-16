@@ -1,0 +1,18 @@
+ul a.active {
+  border: 2px solid #22be0a;
+  color: #22be0a;
+  border-radius: 10px;
+}
+ul a.active:hover {
+  border: 2px solid #22be0a;
+  color: #fff;
+  background: #22be0a;
+  border-radius: 10px;
+}
+
+.nav:hover {
+  border: 2px solid #22be0a;
+  color: #fff;
+  background: #22be0a;
+  border-radius: 10px;
+}
