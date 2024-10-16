@@ -33,11 +33,13 @@ const ListedBooks = () => {
     const sorted = [...reads];
 
     if (sort === "rating") {
-      sorted.sort((a, b) => b.rating - a.rating);
+      sorted.sort((low, high) => high.rating - low.rating);
     } else if (sort === "pages") {
-      sorted.sort((a, b) => a.pages - b.pages);
+      sorted.sort((low, high) => high.pages - low.pages);
     } else if (sort === "year") {
-      sorted.sort((a, b) => b.year_of_publishing - a.year_of_publishing);
+      sorted.sort(
+        (low, high) => high.year_of_publishing - low.year_of_publishing
+      );
     }
 
     setReads(sorted);

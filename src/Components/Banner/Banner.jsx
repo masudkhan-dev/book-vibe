@@ -1,8 +1,15 @@
 import { TypeAnimation } from "react-type-animation";
 
 import book from "../../../public/assets/banner.png";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/listedbooks");
+  };
+
   return (
     <div className="container mx-auto px-3 lg:px-0">
       <div className="flex justify-center items-center mt-3 md:mt-7">
@@ -19,11 +26,15 @@ const Banner = () => {
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: "2em", display: "inline-block", fontWeight:'bold' }}
+              style={{
+                fontSize: "2em",
+                display: "inline-block",
+                fontWeight: "bold",
+              }}
               repeat={Infinity}
             />{" "}
             <br />
-            <button className="mt-8 btn bg-[#22BE0A] text-white px-6 py-2  rounded-md">
+            <button onClick={handleNavigate} className="mt-8 btn bg-[#22BE0A] text-white px-6 py-2  rounded-md">
               View The List
             </button>
           </div>
