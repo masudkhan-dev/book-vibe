@@ -1,5 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GoogleMapReact from "google-map-react";
+import { googleAPKey } from "../../Utility/GoogleAPIKey";
+
+const Map = ({ text }) => <div>{text}</div>;
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -11,18 +16,32 @@ const Contact = () => {
     toast("Message send succesfully!");
   };
 
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>contact</title>
+      </Helmet>
       <div className="container mx-auto px-3 lg:px-0">
         <div className="hero bg-base-200 min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Contact Us</h1>
-              <p className="py-6">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
-              </p>
+              <div style={{ height: "100vh", width: "100%" }}>
+                <GoogleMapReact
+                  bootstrapURLKeys={{ key: googleAPKey }}
+                  defaultCenter={defaultProps.center}
+                  defaultZoom={defaultProps.zoom}
+                >
+                  <Map lat={59.955413} lng={30.337844} text="My Marker" />
+                </GoogleMapReact>
+              </div>
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <form onClick={handleSubmit} className="card-body">

@@ -1,8 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { setRead } from "../../Utility/ReadLocalStorage";
 import { setWhitelist } from "../../Utility/WhitelistLocalStorage";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -29,16 +30,19 @@ const BookDetails = () => {
 
   const handleAddRead = () => {
     setRead(id);
-    toast("Book added to Read!")
+    toast("Book added to Read!");
   };
 
   const handleAddWhitelist = () => {
     setWhitelist(id);
-    toast("Book added to Whitelist!")
+    toast("Book added to Whitelist!");
   };
 
   return (
     <div>
+      <Helmet>
+        <title>book {id}</title>
+      </Helmet>
       <div className="container mx-auto px-3 lg:px-0">
         <article className="flex flex-col md:flex-row gap-10 bg-white transition hover:shadow-xl mt-7">
           <div className="flex ">

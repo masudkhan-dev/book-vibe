@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
     <div>
+      <Helmet>
+        <title>Error</title>
+      </Helmet>
       <div className="container mx-auto px-3 lg:px-0">
         <div>
           <div className="grid h-screen place-content-center bg-white px-4">

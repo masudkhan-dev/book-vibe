@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import ReadsBook from "../ReadsBook/ReadsBook";
 import { getWhitelist } from "../../Utility/WhitelistLocalStorage";
 import Whitelist from "../Whitelist/Whitelist";
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
   const [reads, setReads] = useState([]);
@@ -47,6 +48,9 @@ const ListedBooks = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>listed books</title>
+      </Helmet>
       <div className="container mx-auto px-3 lg:px-0">
         <div className="flex justify-end mt-8">
           <div className="dropdown">

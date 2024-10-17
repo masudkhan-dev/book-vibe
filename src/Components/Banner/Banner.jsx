@@ -34,7 +34,10 @@ const Banner = () => {
               repeat={Infinity}
             />{" "}
             <br />
-            <button onClick={handleNavigate} className="mt-8 btn bg-[#22BE0A] text-white px-6 py-2  rounded-md">
+            <button
+              onClick={handleNavigate}
+              className="mt-8 btn bg-[#22BE0A] text-white px-6 py-2  rounded-md"
+            >
               View The List
             </button>
           </div>
